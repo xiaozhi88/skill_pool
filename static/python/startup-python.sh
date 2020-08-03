@@ -1,0 +1,1 @@
+nohup python3 -u eurekaClient.py >/dev/null 2>&1 &
