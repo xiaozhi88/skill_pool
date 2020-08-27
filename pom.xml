@@ -18,6 +18,7 @@
     <modules>
         <module>mybatisplus</module>
         <module>swagger</module>
+        <module>officehandle</module>
     </modules>
     <dependencies>
         <dependency>
