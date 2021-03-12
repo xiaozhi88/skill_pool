@@ -20,6 +20,8 @@
         <module>swagger</module>
         <module>officehandle</module>
         <module>test</module>
+        <module>elasticsearch</module>
+        <module>mq</module>
     </modules>
     <dependencies>
         <dependency>

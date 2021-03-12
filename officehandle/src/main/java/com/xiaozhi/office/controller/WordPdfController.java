@@ -1,7 +1,12 @@
 package com.xiaozhi.office.controller;
 
+import com.xiaozhi.office.common.BaseResponse;
+import com.xiaozhi.office.common.LocalDateTimeUtils;
 import com.xiaozhi.office.dto.ClimateMonitorContentDto;
 import com.xiaozhi.office.dto.ProductDto;
+import com.xiaozhi.office.property.WordProductProperty;
+import com.xiaozhi.office.service.WordService;
+import com.xiaozhi.office.vo.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -31,7 +36,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class WordPdfController {
 
-    private final  WordService wordService;
+    private final WordService wordService;
 
     private final WordProductProperty wordProductProperty;
 
@@ -42,8 +47,8 @@ public class WordPdfController {
 
     static {
         PRODUCT_TEMPLATE_LIST = new HashMap<String, List<Map<String, String>>>();
-        PRODUCT_TEMPLATE_LIST.put("ProductTypeList", ProductTypeEnum.getAll());
-        PRODUCT_TEMPLATE_LIST.put("ProductStatusList", ProductStatusEnum.getAll());
+        PRODUCT_TEMPLATE_LIST.put("ProductTypeList", com.meitq.cifox.api.module.productmanagement.enums.ProductTypeEnum.getAll());
+        PRODUCT_TEMPLATE_LIST.put("ProductStatusList", com.meitq.cifox.api.module.productmanagement.enums.ProductStatusEnum.getAll());
     }
 
     @ApiOperation(value = "新增高温日数产品")
