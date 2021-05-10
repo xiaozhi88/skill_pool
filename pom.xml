@@ -28,6 +28,7 @@
         <module>jvm</module>
         <module>netty</module>
         <module>rpc-dubbo</module>
+        <module>activity</module>
     </modules>
     <dependencies>
         <dependency>

@@ -2,8 +2,9 @@ package com.xiaozhi.mp.mapper;
 
 import com.xiaozhi.mp.entity.SysDict;
 import com.xiaozhi.mp.entity.SysDictExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /***************************************************/
   /* 
