@@ -22,6 +22,12 @@
         <module>test</module>
         <module>elasticsearch</module>
         <module>mq</module>
+        <module>thread</module>
+        <module>注解和反射</module>
+        <module>动态代理</module>
+        <module>jvm</module>
+        <module>netty</module>
+        <module>rpc-dubbo</module>
     </modules>
     <dependencies>
         <dependency>
@@ -34,6 +40,10 @@
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
             <version>1.9.6</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
 </project>
