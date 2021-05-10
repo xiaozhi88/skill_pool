@@ -22,6 +22,7 @@
         <module>test</module>
         <module>elasticsearch</module>
         <module>mq</module>
+        <module>test1</module>
     </modules>
     <dependencies>
         <dependency>
