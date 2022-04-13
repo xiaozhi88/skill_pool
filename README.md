@@ -1,2 +1,3 @@
 # skill_pool
 技能池,持续添加
+github身份验证方式token: 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
