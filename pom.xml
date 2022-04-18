@@ -24,7 +24,6 @@
         <module>mq</module>
         <module>thread</module>
         <module>注解和反射</module>
-        <module>动态代理</module>
         <module>jvm</module>
         <module>netty</module>
         <module>rpc-dubbo</module>

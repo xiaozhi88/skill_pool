@@ -1,7 +1,5 @@
 package com.xiaozhi;
 
-import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
-
 import java.util.concurrent.*;
 
 /**
@@ -13,19 +11,23 @@ import java.util.concurrent.*;
  */
 public class ThreadPool {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(5, 10, 6000,
                 TimeUnit.MICROSECONDS, new SynchronousQueue<Runnable>(), Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
-        for(int i=0;i<11;i++) {
-            threadPoolExecutor.execute(new ThreadTest());
-        }
-        ExecutorService executorService = Executors.newSingleThreadExecutor();
-        Future<?> submit = executorService.submit(new ThreadTest());
-        System.out.println(submit);
-        executorService.shutdown();
-        boolean terminated = executorService.isTerminated();
-
-        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
+//        for(int i=0;i<11;i++) {
+//            threadPoolExecutor.execute(new ThreadTest());
+//        }
+//        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        FutureTask<String> futureTask =
+                new FutureTask<String>(new ThreadTest());
+        Future<?> submit = threadPoolExecutor.submit(futureTask);
+        System.out.println("submit: " + submit.get());
+        threadPoolExecutor.shutdown();
+        boolean terminated = threadPoolExecutor.isShutdown();
+        System.out.println(terminated);
+        threadPoolExecutor.shutdownNow();
+        System.out.println(threadPoolExecutor.isTerminated());
+//        ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
 
 
     }

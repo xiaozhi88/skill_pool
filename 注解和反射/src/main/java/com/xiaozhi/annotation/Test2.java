@@ -1,6 +1,9 @@
 package com.xiaozhi.annotation;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * 类描述
@@ -11,8 +14,8 @@ import java.lang.annotation.*;
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-//@Inherited
-public @interface Test1 {
+@Test1
+public @interface Test2{
 
 }
 
